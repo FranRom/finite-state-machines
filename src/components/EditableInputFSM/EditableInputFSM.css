@@ -1,0 +1,48 @@
+input {
+  margin: 0;
+  font-size: 28px;
+  height: 26px;
+  width: 200px;
+  padding: 8px;
+  border-radius: 6px 0 0 6px;
+  border-width: 1px 0 1px 1px;
+  border-color: #ddd;
+  border-style: solid;
+  background: #fff;
+  color: #888;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textFormat {
+  font-size: 30px;
+  padding-right: 8px;
+}
+
+.saveBtn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 0 7px;
+  font-size: 38px;
+  border-radius: 0 6px 6px 0;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.editBtn {
+  border: none;
+  background: transparent;
+  color: #888;
+  font-size: 38px;
+  cursor: pointer;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  color: DarkGray;
+}

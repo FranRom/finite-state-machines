@@ -8,9 +8,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        <h1>FINITE STATE MACHINE</h1>
+        <div className="appContainer">
           <EditableInputFSM initialValue="Editable Input" />
-        </header>
+        </div>
       </div>
     );
   }

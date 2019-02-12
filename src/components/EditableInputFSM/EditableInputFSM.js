@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 
+import Spinner from "../Spinner";
+
+import "./EditableInputFSM.css";
+
 class EditableInputFSM extends Component {
   state = {
     name: "display",
@@ -80,24 +84,43 @@ class EditableInputFSM extends Component {
     const { processing, value, editing, editValue, error } = this.state.machine;
 
     if (processing) {
-      return <p>Processing ...</p>;
+      return (
+        <div className="wrapper">
+          <p className="textFormat">Processing</p>
+          <Spinner />
+        </div>
+      );
     } else if (editing) {
       return (
-        <div>
+        <div className="wrapper">
           <input
             type="text"
             onChange={this.handleSubmit}
             value={editValue || value}
           />
           {error && <p>Error: {error}</p>}
-          <button onClick={() => this.handleSave(editValue)}>Save</button>
+          <button
+            className="btn saveBtn"
+            onClick={() => this.handleSave(editValue)}
+          >
+            <span role="img" aria-label="save-emoji">
+              ✔️
+            </span>
+          </button>
         </div>
       );
     } else {
       return (
-        <div>
-          <p>{value}</p>
-          <button onClick={() => this.goToState("edit", value)}>Edit</button>
+        <div className="wrapper">
+          <span className="textFormat">{value}</span>
+          <button
+            className="btn editBtn"
+            onClick={() => this.goToState("edit", value)}
+          >
+            <span role="img" aria-label="edit-emoji">
+              ✎
+            </span>
+          </button>
         </div>
       );
     }
