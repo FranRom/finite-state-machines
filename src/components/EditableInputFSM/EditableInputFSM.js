@@ -65,12 +65,9 @@ class EditableInputFSM extends Component {
     });
   }
 
-  async handleSubmit(e) {
-    console.log("EEE: ", e.target.value);
-    // const submit = await this.goToState("edit", e.target.value);
-    // return submit;
+  handleSubmit = e => {
     this.goToState("edit", e.target.value);
-  }
+  };
 
   handleSave(valueToSave) {
     this.goToState("saving");
